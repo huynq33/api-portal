@@ -54,6 +54,7 @@ import { PermissionsResolver } from './resolvers/permissions-resolver.service';
 import { TicketsHistoryComponent } from './components/gv-tickets-history/tickets-history.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: '/catalog/categories', pathMatch: 'full' },
   { path: '', component: HomepageComponent, data: { title: i18n('route.homepage'), menu: false, animation: { type: 'fade' } } },
   {
     path: 'dashboard',
@@ -157,7 +158,7 @@ export const routes: Routes = [
         resolve: { category: CategoryResolver },
         data: {
           title: i18n('route.catalogCategory'),
-          menu: { hide: true, slots: { top: GvHeaderItemComponent, 'right-transition': GvSearchApiComponent } },
+          menu: { slots: {'right-transition': GvSearchApiComponent } },
         },
       },
       {

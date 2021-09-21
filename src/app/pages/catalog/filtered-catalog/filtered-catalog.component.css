@@ -39,9 +39,11 @@
 }
 
 .catalog__section__top {
-  display: flex;
+  position: relative;
   margin-bottom: 2rem;
-  flex: 1;
+  background: radial-gradient(93.08% 1807.03% at 20.76% 0%, #FA8D50 0%, #E36541 63.58%, #CC3B31 100%);
+  border-radius: 15px;
+  padding: 15px;
 }
 
 gv-promote, app-gv-page {
@@ -81,6 +83,7 @@ gv-promote, app-gv-page {
   line-height: 24px;
   min-height: 24px;
   margin-bottom: 1rem;
+  margin-top: 200px;
 }
 
 .catalog__section__content__title .title {
@@ -130,5 +133,40 @@ gv-row {
   .categories__section > gv {
     flex: 0 1 auto;
   }
+}
 
+.gv-pro-bg-vt {
+  position: absolute;
+  right: 92px;
+  top: 24px;
+  content: var(--gv-pro-bg-vt);
+}
+
+.content {
+  color: white;
+  margin-left: 30px;
+  width: 30%;
+  min-width: 200px;
+}
+.content > button {
+  background-color: white;
+  color: #F14D57;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 100px;
+}
+.content > button:hover {
+  cursor: pointer;
+  color: #CC3B31;
+}
+
+gv-identity-picture {
+  height: 125px;
+  width: 125px;
+}
+.labels {
+  margin: 10px 0px;
+}
+.version {
+  margin-left: 0;
 }

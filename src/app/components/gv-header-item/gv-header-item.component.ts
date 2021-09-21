@@ -21,10 +21,12 @@ import { ApplicationResolver } from '../../resolvers/application.resolver';
 import { CurrentUserService } from '../../services/current-user.service';
 import { EventService } from '../../services/event.service';
 import { NavRouteService } from '../../services/nav-route.service';
+import { html } from 'lit-html';
 
 @Component({
   selector: 'app-gv-header-item',
   templateUrl: './gv-header-item.component.html',
+  styleUrls: ['./gv-header-item.component.css']
 })
 export class GvHeaderItemComponent implements OnInit, OnDestroy {
   static RELOAD_EVENT = ':gv-header-item:reload';
@@ -110,5 +112,67 @@ export class GvHeaderItemComponent implements OnInit, OnDestroy {
 
   onSubscribe() {
     this.router.navigate([this._subscribeUrl]);
+  }
+
+  getPicture(item) {
+    if (item) {
+      if (item.picture) {
+        return item.picture;
+      } else if (item._links && item._links.picture) {
+        return item._links.picture;
+      }
+    }
+    return null;
+  }
+
+  getTitle(item) {
+    if (item) {
+      return item.name;
+    }
+    return '';
+  }
+
+  getOwner(item) {
+    if (item && item.owner) {
+      return item.owner.display_name;
+    }
+    return '';
+  }
+
+  getPictureDisplayName(item) {
+    if (item) {
+      if (item.version) {
+        return `${this.getTitle(item)}  ${item.version}`;
+      } else if (item.applicationType) {
+        return `${this.getTitle(item)}  ${item.applicationType}  ${this.getOwner(item)}`;
+      }
+    }
+    return this.getTitle(item);
+  }
+
+  getApplicationTypeIcon(type) {
+    switch (type.toLowerCase()) {
+      case 'browser':
+      case 'web':
+        return 'devices:laptop';
+      case 'native':
+        return 'devices:android';
+      case 'backend_to_backend':
+        return 'devices:server';
+      default:
+        return 'layout:layout-top-panel-2';
+    }
+  }
+
+  getVersion(item) {
+    if (item) {
+      if (item.version) {
+        return item.version;
+      } else if (item.applicationType) {
+        const icon = this.getApplicationTypeIcon(item.applicationType);
+        return html`<gv-icon shape="${icon}"></gv-icon>`;
+      }
+    }
+    return null;
   }
 }

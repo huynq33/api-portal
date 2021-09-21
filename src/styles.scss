@@ -16,10 +16,24 @@ $font-prefix: '~@ibm/plex';
   --gv-theme-layout-footer-bottom--h: 150px;
   --gv-theme-layout-footer-top--h: 338px;
   --gv-theme-layout-header--h: 3.8rem;
+  --gv-theme-homepage-background-height2: 100%;
 
   // ********** Page ************
   --gv-theme-page--pb: 4rem;
   --gv-theme-page--pt: 4rem;
+
+  // ********** Modify login page huynq79 ************
+  --gv-theme-logo-v2: url('/assets/images/gv-logo-v2.png');
+  --gv-theme-login-bg: url('/assets/images/gv-bg-login.png');
+  --gv-theme-login-title: url('/assets/images/API-Portal.png');
+  --gv-pro-bg-vt: url('/assets/images/gv-pro-vt.png');
+
+  --gv-menu--bgc: white;
+  --gv-menu--c: black;
+  --gv-state-major--bgc:rgba(39, 174, 96, 0.15);
+  --gv-state-major--c:#27AE60;
+  --gv-tag-major--bgc: #F14D57;
+  --gv-tag-major--bdc:#F14D57;
 }
 
 /* (1920x1080) Full HD Display */
@@ -283,4 +297,25 @@ body {
 .invalid::after {
   content: '*';
   margin: 0 0.2rem;
+}
+.gv-btn-vt {
+  padding: 0px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  color: black;
+  border: none;
+}
+
+.gv-btn-vt.active {
+  opacity: 1;
+  background-color: #F14D57;
+  padding: 10px 16px;
+  color: white;
+}
+
+.gv-btn-vt:hover {
+  transform: scale(1.1);
+  color: cornflowerblue;
 }

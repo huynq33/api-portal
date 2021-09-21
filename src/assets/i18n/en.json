@@ -855,8 +855,9 @@
       "link": "Sign up !",
       "text": "Don't have an account yet ?"
     },
-    "title": "Who are you ?",
-    "username": "Username"
+    "title": "Đăng nhập",
+    "username": "Username",
+    "intro": "Giúp bạn nhanh chóng, là thuận lợi truy cập và kết nối hệ thống của mình cùng với các sản phẩm của Viettel Telecom"
   },
   "notFound": {
     "goHome": "Go Home",

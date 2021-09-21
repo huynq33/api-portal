@@ -19,27 +19,33 @@
 <app-gv-cookie-consent></app-gv-cookie-consent>
 
 <div class="layout"
-     [ngClass]="{'sticky': this.isSticky, 'sticky-homepage': this.isStickyHomepage, 'layout__homepage': isHomepage  }">
+     [ngClass]="{'sticky': this.isSticky, 'sticky-homepage': this.isStickyHomepage  }">
 
-  <div #homepageBackground class="layout__header__homepage__background">
-    <div *ngIf="isHomepage" class="layout__header__homepage__title">
-      <h1>{{'homepage.title' | translate}}</h1>
-      <gv-button (:gv-button:click)="goTo('/catalog')" outlined>{{'homepage.explore' | translate}}</gv-button>
-      <gv-button (:gv-button:click)="goTo('/user/registration')" *ngIf="displaySignUp()"
-                 outlined>{{'homepage.signup' | translate}}</gv-button>
-    </div>
-    <div class="layer"></div>
-  </div>
+<!--  <div #homepageBackground class="layout__header__homepage__background">-->
+<!--    <div *ngIf="isHomepage" class="layout__header__homepage__title">-->
+<!--      <h1>{{'homepage.title' | translate}}</h1>-->
+<!--      <gv-button (:gv-button:click)="goTo('/catalog')" outlined>{{'homepage.explore' | translate}}</gv-button>-->
+<!--      <gv-button (:gv-button:click)="goTo('/user/registration')" *ngIf="displaySignUp()"-->
+<!--                 outlined>{{'homepage.signup' | translate}}</gv-button>-->
+<!--    </div>-->
+<!--    <div class="layer"></div>-->
+<!--  </div>-->
 
   <header class="layout__header">
     <div class="layout__header__container">
       <a [routerLink]="'/'" title="{{ 'site.title' | translate }}" class="layout__header__logo"
          [ngClass]="{'layout__header__homepage__logo': isHomepage}"></a>
 
-      <gv-nav *ngIf="!forceLogin() || (forceLogin() && !isInLoginOrRegistration())"
-              [routes]="mainRoutes" [ngClass]="{'layout__nav': isHomepage}"></gv-nav>
+<!--      <gv-nav *ngIf="!forceLogin() || (forceLogin() && !isInLoginOrRegistration())"-->
+<!--              [routes]="mainRoutes" [ngClass]="{'layout__nav': isHomepage}"></gv-nav>-->
+      <nav class="gv-nav-vt">
+        <a routerLink="dashboard" routerLinkActive="active" class="gv-btn-vt" *ngIf="isAuthenticated()">Dashboard</a>
+        <a routerLink="catalog" routerLinkActive="active" class="gv-btn-vt">Catalog</a>
+        <a routerLink="applications" routerLinkActive="active" class="gv-btn-vt" *ngIf="isAuthenticated()">Applications</a>
+        <a routerLink="documentation/root" routerLinkActive="active" class="gv-btn-vt">Documentation</a>
+      </nav>
 
-      <div class="layout__nav__container" [ngClass]="{'layout__nav': displayShadowNav()}"
+      <div class="layout__nav__container"
            *ngIf="!isInLoginOrRegistration()">
         <gv-user-menu [routes]="userRoutes" [ngClass]="{'layout__user-menu': isHomepage}"
                       [username]="userName">
@@ -53,9 +59,7 @@
     </div>
 
     <gv-menu [routes]="menuRoutes" [sticky]="this.isSticky">
-      <ng-template gvMenuTopSlot></ng-template>
       <ng-template gvMenuRightTransitionSlot></ng-template>
-      <ng-template gvMenuRightSlot></ng-template>
     </gv-menu>
     <gv-message
       *ngIf="notification"
@@ -66,7 +70,9 @@
 
   </header>
 
-  <div class="layout__content" [ngClass]="{ 'layout__content__homepage': isHomepage }">
+  <div class="layout__content" >
+    <ng-template gvMenuTopSlot></ng-template>
+    <ng-template gvMenuRightSlot></ng-template>
     <div [@routeAnimations]="prepareRoute(outlet)">
       <router-outlet #outlet="outlet"></router-outlet>
     </div>

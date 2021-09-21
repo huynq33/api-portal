@@ -1,0 +1,13 @@
+gv-identity-picture {
+  height: 125px;
+  width: 125px;
+  position: absolute;
+  --gv-image--of: contain;
+  transition: all 150ms ease-in-out 0s;
+}
+
+.header {
+  padding: var(--gv-theme-page--pt) var(--gv-theme-layout--pr) var(--gv-theme-page--pb) var(--gv-theme-layout--pl);
+  display: flex;
+  justify-content: space-between;
+}

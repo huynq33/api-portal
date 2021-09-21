@@ -38,6 +38,8 @@ import { ApiLabelsPipe } from '../../../pipes/api-labels.pipe';
 import { ConfigurationService } from '../../../services/configuration.service';
 import { FeatureEnum } from '../../../model/feature.enum';
 import { createPromiseList } from 'src/app/utils/utils';
+import { getTitle, getDescription, getVersion } from '@gravitee/ui-components/src/lib/item';
+import { html } from 'lit-html';
 
 @Component({
   selector: 'app-all',
@@ -55,6 +57,7 @@ export class FilteredCatalogComponent implements OnInit {
   allApis: any[];
   randomList: any[];
   promotedApi: Promise<any>;
+  promotedApiClone: Api;
   promotedApiPath: string;
   promotedMetrics: ApiMetrics;
   filterApiQuery: FilterApiQuery;
@@ -188,6 +191,7 @@ export class FilteredCatalogComponent implements OnInit {
             this.empty = true;
           });
         }
+        this.promotedApiClone = promoted;
         return promoted;
       });
   }
@@ -343,5 +347,42 @@ export class FilteredCatalogComponent implements OnInit {
 
   goToSearch(tag: string) {
     this.router.navigate(['catalog/search'], { queryParams: { q: tag } });
+  }
+
+  getTitle() {
+    return this.promotedApiClone.name;
+  }
+
+  getVersion() {
+    return this.promotedApiClone.version;
+  }
+
+  getDescription() {
+    return this.promotedApiClone.description;
+  }
+
+  getPictureDisplayName() {
+    if (this.promotedApiClone) {
+      if (this.promotedApiClone.version) {
+        return `${this.getTitle()}  ${this.promotedApiClone.version}`;
+      }
+    }
+    return this.getTitle();
+  }
+
+  getPicture() {
+    if (this.promotedApiClone) {
+      if (this.promotedApiClone._links && this.promotedApiClone._links.picture) {
+        return this.promotedApiClone._links.picture;
+      }
+    }
+    return null;
+  }
+
+  getLabels() {
+    if (this.promotedApiClone) {
+      return this.promotedApiClone.labels;
+    }
+    return null;
   }
 }

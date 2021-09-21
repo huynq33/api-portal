@@ -16,15 +16,25 @@
 
 -->
 
-<form class="page__content form" [formGroup]="loginForm" (ngSubmit)="login()">
-
-  <div class="page__box">
-    <div class="page__box-title">
-      <h3 *ngIf="loginForm || providers">{{ 'login.title' | translate }}</h3>
+<form class="page__content form" [formGroup]="loginForm" (ngSubmit)="login()" style="display: flex; margin-top: 50px">
+  <div style="margin-left: 25%; width:25%; display:inline-block;">
+    <div class="login_title">
     </div>
+    <div>
+      <p>{{ 'login.intro' | translate }} </p>
+    </div>
+    <div class="login_bg">
+    </div>
+  </div>
 
-    <div class="page__box-content" *ngIf="loginEnabled">
-      <gv-input
+  <div style="width:25%; display:inline-block;">
+    <div class="page__box">
+      <div class="page__box-title">
+        <h3 *ngIf="loginForm || providers">{{ 'login.title' | translate }}</h3>
+      </div>
+
+      <div class="page__box-content" *ngIf="loginEnabled">
+        <gv-input
           autofocus
           class="form__control"
           name="username"
@@ -33,9 +43,9 @@
           ngDefaultControl
           gvControl
           icon-left="communication:shield-user">
-        <input/>
-      </gv-input>
-      <gv-input
+          <input/>
+        </gv-input>
+        <gv-input
           class="form__control"
           type="password"
           name="password"
@@ -44,12 +54,12 @@
           ngDefaultControl
           gvControl
           icon-left="general:shield-protected">
-        <input/>
-      </gv-input>
-    </div>
+          <input/>
+        </gv-input>
+      </div>
 
-    <div class="page__box-footer form__actions form__actions-column">
-      <gv-button
+      <div class="page__box-footer form__actions form__actions-column">
+        <gv-button
           *ngIf="loginEnabled"
           class="signin"
           [disabled]="!isFormValid()"
@@ -57,24 +67,24 @@
           icon="navigation:sign-in"
           type="submit">{{ 'login.button' | translate }}</gv-button>
 
-      <gv-button *ngFor="let provider of providers"
-                 class="btn__provider"
-                 [provider]="provider.type"
-                 [style]="getProviderStyle(provider)"
-                 (:gv-button:click)="authenticate(provider)">
-        {{ provider.name }}
-      </gv-button>
+        <gv-button *ngFor="let provider of providers"
+                   class="btn__provider"
+                   [provider]="provider.type"
+                   [style]="getProviderStyle(provider)"
+                   (:gv-button:click)="authenticate(provider)">
+          {{ provider.name }}
+        </gv-button>
 
-      <div *ngIf="loginEnabled && registrationEnabled" class="row">
-        <div>{{ 'login.signup.text' | translate }}</div>
-        <gv-button link routerLink="/user/registration">{{ 'login.signup.link' | translate }}</gv-button>
-      </div>
-      <div *ngIf="loginEnabled" class="row">
-        <gv-button link routerLink="/user/resetPassword">{{ 'login.resetPassword' | translate }}</gv-button>
+        <div *ngIf="loginEnabled && registrationEnabled" class="row">
+          <div>{{ 'login.signup.text' | translate }}</div>
+          <gv-button link routerLink="/user/registration">{{ 'login.signup.link' | translate }}</gv-button>
+        </div>
+        <div *ngIf="loginEnabled" class="row">
+          <gv-button link routerLink="/user/resetPassword">{{ 'login.resetPassword' | translate }}</gv-button>
+        </div>
+
       </div>
 
     </div>
-
   </div>
-
 </form>

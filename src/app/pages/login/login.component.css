@@ -37,3 +37,19 @@
 .signin {
   margin-bottom: 1rem;
 }
+
+.login_title {
+  background-image: var(--gv-theme-login-title);
+  background-position: left;
+  background-repeat: no-repeat;
+  min-height: 76px;
+}
+
+.login_bg {
+  background-image: var(--gv-theme-login-bg);
+  background-position: left;
+  background-repeat: no-repeat;
+  min-height: 349px;
+}
+
+

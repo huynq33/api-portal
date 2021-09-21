@@ -29,19 +29,47 @@
 
   <section class="catalog__section__top" *ngIf="!empty">
 
-    <gv-promote [item]="promotedApi" [metrics]="promotedMetrics"
-                [href]="this.promotedApiPath"
-                (:gv-promote:click)="goToApi(promotedApi)"
-                (:gv-tag:click)="goToSearch($event.detail.tagValue)"></gv-promote>
+<!--    <gv-promote [item]="promotedApi" [metrics]="promotedMetrics"-->
+<!--                [href]="this.promotedApiPath"-->
+<!--                (:gv-promote:click)="goToApi(promotedApi)"-->
+<!--                (:gv-tag:click)="goToSearch($event.detail.tagValue)"></gv-promote>-->
 
-    <article class="catalog__article__random" *ngIf="!inCategory() && !inCategoryAll()">
-      <h3 class="title">{{'catalog.othersApi.title' | translate}}
-        <p>{{'catalog.othersApi.subTitle' | translate}}</p></h3>
+    <!--    modify vt-->
+    <div>
+      <div class="container">
+        <div class="content">
+          <div >
+            <gv-identity-picture [picture]="getPicture()" [display_name]="getPictureDisplayName()" style="display: inline; float: left" >
+            </gv-identity-picture>
 
-      <div class="catalog__cards catalog__cards__random">
-        <gv-card *ngFor="let api of randomList" [item]="api" (click)="goToApi(api)"></gv-card>
+            <div class="title" style="float: left; margin-left: 20px">
+              <h2>{{getTitle()}}</h2>
+              <span class="version">Version: {{getVersion()}}</span>
+            </div>
+          </div>
+          <p class="description" style="display: flex;width: 100%"> {{getDescription()}} </p>
+          <div class="infos" *ngIf="promotedMetrics.subscribers > 0">
+            <gv-metrics [metrics]="promotedMetrics" >  </gv-metrics>
+          </div>
+<!--          render label for-->
+          <div class="labels" >
+            <gv-tag *ngFor="let label of getLabels()" major="" clickable="" (:gv-tag:click)="goToSearch(label)">{{label}}</gv-tag>
+          </div>
+          <button tabindex="0" (click)="goToApi(promotedApi)">View API</button>
+        </div>
       </div>
-    </article>
+      <!-- End modify vt-->
+
+      <article class="catalog__article__random" *ngIf="!inCategory() && !inCategoryAll()">
+        <h3 class="title">{{'catalog.othersApi.title' | translate}}
+          <p>{{'catalog.othersApi.subTitle' | translate}}</p></h3>
+
+        <div class="catalog__cards catalog__cards__random">
+          <gv-card *ngFor="let api of randomList" [item]="api" (click)="goToApi(api)"></gv-card>
+        </div>
+      </article>
+    </div>
+    <img class="gv-pro-bg-vt"/>
 
   </section>
 
