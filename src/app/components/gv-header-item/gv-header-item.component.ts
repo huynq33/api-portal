@@ -14,14 +14,23 @@
  * limitations under the License.
  */
 import '@gravitee/ui-components/wc/gv-header';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Api, Application, PortalService, User } from '../../../../projects/portal-webclient-sdk/src/lib';
+import {ActivatedRoute, NavigationEnd, Params, Router} from '@angular/router';
+import {
+  Api,
+  Application,
+  ApplicationService,
+  FilterApiQuery,
+  PortalService,
+  User
+} from '../../../../projects/portal-webclient-sdk/src/lib';
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { ApplicationResolver } from '../../resolvers/application.resolver';
 import { CurrentUserService } from '../../services/current-user.service';
 import { EventService } from '../../services/event.service';
 import { NavRouteService } from '../../services/nav-route.service';
 import { html } from 'lit-html';
+import {SearchQueryParam} from "../../utils/search-query-param.enum";
+import {marker as i18n} from "@biesbjerg/ngx-translate-extract-marker/lib/ngx-translate-extract-marker";
 
 @Component({
   selector: 'app-gv-header-item',
@@ -39,15 +48,18 @@ export class GvHeaderItemComponent implements OnInit, OnDestroy {
   private itemId: string;
   private currentRoute: ActivatedRoute;
   private _subscribeUrl: string;
-
+  backButton: { url?: string, label?: string, queryParams?: Params };
   constructor(public router: Router,
+              private route: ActivatedRoute,
               public activatedRoute: ActivatedRoute,
               public navRouteService: NavRouteService,
               public currentUserService: CurrentUserService,
               public portalService: PortalService,
               public eventService: EventService,
               private applicationResolver: ApplicationResolver,
+              private applicationService: ApplicationService,
   ) {
+    this.backButton = {};
   }
 
   ngOnInit() {
@@ -70,6 +82,8 @@ export class GvHeaderItemComponent implements OnInit, OnDestroy {
         this.item = Object.assign({}, this.item, { name: event.details.data });
       }
     });
+    this.route.queryParams
+      .subscribe(params => {});
   }
 
   ngOnDestroy() {
@@ -99,6 +113,7 @@ export class GvHeaderItemComponent implements OnInit, OnDestroy {
     this.currentUserService.get().subscribe(newCurrentUser => {
       this.currentUser = newCurrentUser;
     });
+    this.computeButtonback();
   }
 
   @HostListener('document:gv-header-item:refresh')
@@ -139,6 +154,13 @@ export class GvHeaderItemComponent implements OnInit, OnDestroy {
     return '';
   }
 
+  getStates(item) {
+    if (item) {
+      return item.running;
+    }
+    return null;
+  }
+
   getPictureDisplayName(item) {
     if (item) {
       if (item.version) {
@@ -174,5 +196,53 @@ export class GvHeaderItemComponent implements OnInit, OnDestroy {
       }
     }
     return null;
+  }
+  async computeButtonback() {
+    let label;
+    let url;
+    let queryParams;
+    const queryParamMap = this.route.snapshot.queryParamMap;
+    const routerUrl = this.router.url;
+    if (queryParamMap.has(SearchQueryParam.QUERY)) {
+      label = 'Back to search';
+      url = '/catalog/search';
+      queryParams = this.route.snapshot.queryParams;
+    } else if (routerUrl.includes('applications')) {
+      try {
+        label = 'Back to Applications';
+        url = `/applications`;
+      } catch (err) {
+        if (err && err.interceptorFuture) {
+          err.interceptorFuture.cancel();
+        }
+      }
+    } else if (routerUrl.includes('catalog')){
+      if (queryParamMap.has(SearchQueryParam.CATEGORY)) {
+        const categoryId = queryParamMap.get(SearchQueryParam.CATEGORY);
+        try {
+          label = `Back to category: ${categoryId}`;
+          url = `/catalog/categories/${categoryId}`;
+        } catch (err) {
+          if (err && err.interceptorFuture) {
+            err.interceptorFuture.cancel();
+          }
+        }
+      } else if (queryParamMap.has(SearchQueryParam.API_QUERY)) {
+        const apiQuery = queryParamMap.get(SearchQueryParam.API_QUERY) as FilterApiQuery;
+        if (Object.values(FilterApiQuery).includes(apiQuery)) {
+          label = `Back to all Api`;
+          url = `/catalog/all`;
+        }
+
+      } else {
+        label = `Back to all Api`;
+        url = `/catalog/all`;
+      }
+    }
+
+    this.backButton = {label, url, queryParams};
+  }
+  goBack() {
+    this.router.navigate([this.backButton.url]);
   }
 }

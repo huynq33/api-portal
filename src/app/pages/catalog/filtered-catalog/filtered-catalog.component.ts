@@ -379,6 +379,13 @@ export class FilteredCatalogComponent implements OnInit {
     return null;
   }
 
+  getRating() {
+    if (this.promotedApiClone) {
+      return this.promotedApiClone.rating_summary;
+    }
+    return null;
+  }
+
   getLabels() {
     if (this.promotedApiClone) {
       return this.promotedApiClone.labels;

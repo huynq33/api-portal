@@ -24,6 +24,7 @@
               "src/favicon.ico",
               "src/favicon.png",
               "src/assets",
+              "src/icons",
               {
                 "glob": "**/*.js",
                 "input": "node_modules/@webcomponents/webcomponentsjs",

@@ -44,12 +44,14 @@
 
             <div class="title" style="float: left; margin-left: 20px">
               <h2>{{getTitle()}}</h2>
-              <span class="version">Version: {{getVersion()}}</span>
+              <span class="version" style="margin-bottom: 10px;display: block;">Version: {{getVersion()}}</span>
+              <gv-rating *ngIf="getRating()" [value]="getRating().average" [count]="getRating().count"></gv-rating>
             </div>
           </div>
           <p class="description" style="display: flex;width: 100%"> {{getDescription()}} </p>
           <div class="infos" *ngIf="promotedMetrics.subscribers > 0">
-            <gv-metrics [metrics]="promotedMetrics" >  </gv-metrics>
+            <gv-metrics [metrics]="promotedMetrics" >
+            </gv-metrics>
           </div>
 <!--          render label for-->
           <div class="labels" >
@@ -58,7 +60,7 @@
           <button tabindex="0" (click)="goToApi(promotedApi)">View API</button>
         </div>
       </div>
-      <!-- End modify vt-->
+<!--       End modify vt-->
 
       <article class="catalog__article__random" *ngIf="!inCategory() && !inCategoryAll()">
         <h3 class="title">{{'catalog.othersApi.title' | translate}}

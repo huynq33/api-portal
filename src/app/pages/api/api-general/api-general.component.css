@@ -15,6 +15,11 @@
  */
 
 @import '../../../../css/form.css';
+:host {
+  --gv-theme-font-color-dark:#F14D57;
+  --star-vt: #F14D57;
+  --gv-button-primary--bgc: #F14D57;
+}
 
 .rating-form {
   --gv-rating--s: 26px;
@@ -86,4 +91,15 @@
 .link:hover {
   opacity: .7;
   transition: opacity .15s ease-in;
+}
+.page__content {
+  background-color: white;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin: 2px var(--gv-theme-layout--pr) var(--gv-theme-page--pb) var(--gv-theme-layout--pl);
+  padding: 0px;
+}
+.page__box-title, .page__box-content, .page__box-footer {
+  margin: 0px 4rem;
+  padding: 2rem 0px;
 }

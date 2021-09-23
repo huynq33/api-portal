@@ -13,6 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+.catalog__section__top{
+  --star-vt:white;
+}
 .catalog__category__documentation {
   width: 100%
 }
@@ -161,6 +165,7 @@ gv-row {
 }
 
 gv-identity-picture {
+  margin-bottom: 20px;
   height: 125px;
   width: 125px;
 }

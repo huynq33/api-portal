@@ -14,4 +14,11 @@
  * limitations under the License.
  */
 @import "../../../../src/css/form.css";
+.page__content {
+  background-color: white;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin: 2px var(--gv-theme-layout--pr) var(--gv-theme-page--pb) var(--gv-theme-layout--pl);
+  padding: 0px;
+}
 

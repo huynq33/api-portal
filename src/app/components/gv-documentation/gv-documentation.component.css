@@ -88,3 +88,13 @@ app-gv-page.show {
     transform: rotate(360deg);
   }
 }
+.page__content {
+  background-color: white;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin: 2px var(--gv-theme-layout--pr) var(--gv-theme-page--pb) var(--gv-theme-layout--pl);
+  padding: 0px;
+}
+.page__content section {
+  margin: 0px;
+}

@@ -78,32 +78,32 @@
     </div>
   </div>
 
-  <footer class="layout__footer">
-    <section class="layout__footer__top" *ngIf="links.topfooter">
-      <a [routerLink]="'/'" title="{{ 'site.title' | translate }}" class="layout__footer__top__logo"></a>
-      <div class="layout__footer__top__category" *ngFor="let category of links.topfooter">
-        <span class="layout__footer__top__category__title">{{category.title | translate}}</span>
-        <div class="layout__footer__top__category__title_border"></div>
-        <ul class="layout__footer__top__category__links">
-          <li *ngFor="let link of category.links">
-            <gv-link [path]="link.path" [target]="link.target"
-                     title="{{ link.title | translate }}"></gv-link>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section class="layout__footer__bottom">
-      <ul>
-        <li>
-          <gv-link path="cookies" title="{{ 'route.cookies' | translate }}"></gv-link>
-        </li>
-        <li>{{ 'footer.rights' | translate }}</li>
-      </ul>
-      <ul *ngIf="links.footer">
-        <li *ngFor="let link of links.footer">
-          <gv-link [path]="link.path" [target]="link.target" title="{{ link.title | translate }}"></gv-link>
-        </li>
-      </ul>
-    </section>
-  </footer>
+<!--  <footer class="layout__footer">-->
+<!--    <section class="layout__footer__top" *ngIf="links.topfooter">-->
+<!--      <a [routerLink]="'/'" title="{{ 'site.title' | translate }}" class="layout__footer__top__logo"></a>-->
+<!--      <div class="layout__footer__top__category" *ngFor="let category of links.topfooter">-->
+<!--        <span class="layout__footer__top__category__title">{{category.title | translate}}</span>-->
+<!--        <div class="layout__footer__top__category__title_border"></div>-->
+<!--        <ul class="layout__footer__top__category__links">-->
+<!--          <li *ngFor="let link of category.links">-->
+<!--            <gv-link [path]="link.path" [target]="link.target"-->
+<!--                     title="{{ link.title | translate }}"></gv-link>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </section>-->
+<!--    <section class="layout__footer__bottom">-->
+<!--      <ul>-->
+<!--        <li>-->
+<!--          <gv-link path="cookies" title="{{ 'route.cookies' | translate }}"></gv-link>-->
+<!--        </li>-->
+<!--        <li>{{ 'footer.rights' | translate }}</li>-->
+<!--      </ul>-->
+<!--      <ul *ngIf="links.footer">-->
+<!--        <li *ngFor="let link of links.footer">-->
+<!--          <gv-link [path]="link.path" [target]="link.target" title="{{ link.title | translate }}"></gv-link>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </section>-->
+<!--  </footer>-->
 </div>

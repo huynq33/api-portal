@@ -18,13 +18,20 @@
 <!--<gv-header slot="header" *ngIf="item" [item]="item"-->
 <!--               [canSubscribe]="canSubscribe()"-->
 <!--               (:gv-header:subscribe)="onSubscribe()"></gv-header>-->
+<div>
+  <gv-button link icon="navigation:angle-left"
+             class="page__content-back-button-vt"
+             (:gv-button:click)="goBack()">
+    {{backButton.label}}
+  </gv-button>
+</div>
 <div class="header">
   <gv-identity-picture [picture]="getPicture(item)" [display_name]="getPictureDisplayName(item)">
 
   </gv-identity-picture>
-  <div class="title" style="margin-left: 130px">
-    <h1>{{getTitle(item)}}</h1>
-    <h2>{{getVersion(item)}}</h2>
+  <div class="title" style="margin-left: 70px">
+    <p style="font-weight: bold;font-size: 20px;margin: 0px">{{getTitle(item)}}</p>
+    <p>Version: {{getVersion(item)}} <gv-state *ngIf="getStates(item)">Running</gv-state></p>
   </div>
   <div class="actions" *ngIf="canSubscribe()">
     <button (click)="onSubscribe()" class="gv-btn-vt active">Subscribe</button>
