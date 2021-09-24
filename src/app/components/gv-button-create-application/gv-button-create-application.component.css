@@ -17,8 +17,8 @@
 gv-button {
     -ms-transition: all 200ms ease-in;
     transition: all 200ms ease-in;
-    margin-top: 30px;
-    margin-right: 25px;
+    margin-top: var(--gv-theme-page--pt);
+    margin-right: var(--gv-theme-layout--pr);
     float: right;
 }
 
