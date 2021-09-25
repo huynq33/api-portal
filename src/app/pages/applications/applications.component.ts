@@ -35,6 +35,7 @@ export class ApplicationsComponent implements OnInit {
   applications: { item: Application; metrics: Promise<{ subscribers: { clickable: boolean; value: number } }> }[] = [];
   metrics: Array<any>;
   empty: boolean;
+  cardListGridTemplate: string;
 
   constructor(
     private applicationService: ApplicationService,
@@ -55,6 +56,7 @@ export class ApplicationsComponent implements OnInit {
         metrics: this._getMetrics(application)
       }));
       this.empty = this.applications.length === 0;
+      this.cardListGridTemplate = `grid-template-columns: repeat(4, 1fr)`;
     });
   }
 

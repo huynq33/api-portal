@@ -9,8 +9,8 @@ gv-identity-picture {
 
 .header {
   background-color: white;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
   margin: 24px var(--gv-theme-layout--pr) 0px var(--gv-theme-layout--pl);
   display: flex;
   justify-content: space-between;

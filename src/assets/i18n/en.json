@@ -397,6 +397,7 @@
     "types": "{type, select, BACKEND_TO_BACKEND{Backend to backend} NATIVE{Native} WEB{Web} BROWSER{Browser} SIMPLE{Simple} other{Simple}}"
   },
   "applicationCreation": {
+    "title": "New applications",
     "exit": "Exit",
     "general": {
       "description": {
@@ -537,6 +538,7 @@
       "emptyMessage": "Category does not contain any API"
     },
     "category": {
+      "title": "APIs",
       "documentation": {
         "hide": "Hide documentation",
         "show": "Show documentation"
