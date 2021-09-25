@@ -845,18 +845,18 @@
     "title": "Unleash the power of your APIs."
   },
   "login": {
-    "button": "Sign in",
+    "button": "Đăng nhập",
     "notification": {
       "error": "Invalid username or password"
     },
     "password": "Password",
-    "resetPassword": "Reset your password",
+    "resetPassword": "Đặt lại mật khẩu",
     "signup": {
-      "link": "Sign up !",
-      "text": "Don't have an account yet ?"
+      "link": "Đăng ký ngay!",
+      "text": "Bạn chưa có tài khoản? "
     },
     "title": "Đăng nhập",
-    "username": "Username",
+    "username": "Tên đăng nhập",
     "intro": "Giúp bạn nhanh chóng, là thuận lợi truy cập và kết nối hệ thống của mình cùng với các sản phẩm của Viettel Telecom"
   },
   "notFound": {
@@ -877,8 +877,8 @@
   },
   "registration": {
     "backHome": "Back to portal",
-    "backLogin": "Back to Sign in",
-    "button": "Sign up",
+    "backLogin": "Quay lại trang đăng nhập",
+    "button": "Đăng ký",
     "email": "Email",
     "firstname": "First name",
     "lastname": "Last name",
@@ -886,11 +886,11 @@
       "message": "An email has been sent to: {email}",
       "title": "Registration confirmed!"
     },
-    "title": "Create an account"
+    "title": "Đăng ký"
   },
   "registrationConfirmation": {
     "backHome": "Back to portal",
-    "backLogin": "Back to Sign in",
+    "backLogin": "Quay lại trang đăng nhập",
     "backRegistration": "Back to registration",
     "button": "Confirm",
     "confirmedPassword": "Confirm your password",
@@ -907,8 +907,8 @@
   },
   "resetPassword": {
     "backHome": "Back to portal",
-    "backLogin": "Back to Sign in",
-    "button": "Reset your password",
+    "backLogin": "Quay lại trang đăng nhập",
+    "button": "Đặt lại mật khẩu",
     "success": {
       "message": "If the account exists an email will be sent.",
       "title": "Password reset confirmed!"
@@ -952,7 +952,7 @@
     "cookies": "Cookies settings",
     "dashboard": "Dashboard",
     "homepage": "Home page",
-    "login": "Sign in",
+    "login": "Đăng nhập",
     "logout": "Sign out",
     "logsApplication": "Logs",
     "management": "Administration",

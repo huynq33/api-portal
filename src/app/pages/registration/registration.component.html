@@ -15,18 +15,30 @@
     limitations under the License.
 
 -->
-<form *ngIf="canDisplayForm" class="page__content form" [formGroup]="registrationForm" (ngSubmit)="onSubmitRegistration()">
+<form class="p-0 d-f page__content form"  *ngIf="canDisplayForm" [formGroup]="registrationForm" (ngSubmit)="onSubmitRegistration()">
+
+  <div class="login_content">
+  <div class="w-h bg-w p-t-7 b-r login_backgound">
+    <div class="login_title m-l-8">
+    </div>
+    <div class="p-r-18 p-l-8">
+      <p>{{ 'login.intro' | translate }} </p>
+    </div>
+    <div class="login_bg">
+    </div>
+  </div>
 
   <ng-container *ngIf="!isSubmitted">
+    <div class="w-h bg-w login_form">
     <div class="page__box">
       <div class="page__box-title">
-        <h3>{{ 'registration.title' | translate }}</h3>
+        <h3 class="m-0">{{ 'registration.title' | translate }}</h3>
       </div>
 
       <div class="page__box-content" >
         <gv-input
             large
-            class="form__control"
+            class="form__control p-0 m-0 w-h"
             required
             label="{{ 'registration.firstname' | translate }}"
             formControlName="firstname"
@@ -38,7 +50,7 @@
         </gv-input>
         <gv-input
             large
-            class="form__control"
+            class="form__control p-0 m-0 w-h"
             label="{{ 'registration.lastname' | translate }}"
             formControlName="lastname"
             autocomplete="on"
@@ -101,6 +113,7 @@
         </p>
       </div>
     </div>
+  </div>
   </ng-container>
 
   <ng-container *ngIf="isSubmitted">
@@ -120,4 +133,5 @@
       </div>
     </div>
   </ng-container>
+</div>
 </form>
