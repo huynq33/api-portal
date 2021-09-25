@@ -20,10 +20,6 @@
   letter-spacing: 0.05em;
 }
 
-.page__content {
-  display: flex;
-}
-
 .api-subscribe__content {
   background-color: var(--gv-theme-neutral-color-lightest);
   margin-right: 1rem;
@@ -91,7 +87,8 @@
 }
 
 .subscription-accepted {
-  background-color: var(--gv-theme-color);
+  border-radius: var(--gv-border-radius-vt);
+  background-color: #F14D57;
   color: var(--gv-theme-font-color-light);
   margin-bottom: 4rem;
   --gv-icon--c: var(--gv-theme-font-color-light);
@@ -134,7 +131,7 @@
 .api-subscribe__stepper {
   display: flex;
   border-bottom: 1px solid var(--gv-theme-neutral-color-dark);
-  padding: 2rem 1rem 1rem 1rem;
+  margin: 2rem 3rem;
 }
 
 .api-subscribe__stepper gv-stepper {
@@ -177,4 +174,19 @@ aside {
 .link:hover {
   opacity: .7;
   transition: opacity .15s ease-in;
+}
+.page__content {
+  display: flex;
+  background-color: white;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin: 2px var(--gv-theme-layout--pr) var(--gv-theme-page--pb) var(--gv-theme-layout--pl);
+  padding: 0px;
+}
+:host{
+  --gv-stepper-valid--bgc:#F14D57;
+  --gv-stepper-passed--bdc:#F14D57;
+  --gv-plans-characteristic--bgc: #f1a0a6;
+  --gv-plans--bgc:#F14D57;
+  --gv-button--bdrs: 8px;
 }

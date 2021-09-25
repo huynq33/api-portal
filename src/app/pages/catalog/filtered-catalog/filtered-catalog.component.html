@@ -48,7 +48,7 @@
               <gv-rating *ngIf="getRating()" [value]="getRating().average" [count]="getRating().count"></gv-rating>
             </div>
           </div>
-          <p class="description" style="display: flex;width: 100%"> {{getDescription()}} </p>
+          <p class="description" style="display: flex;width: 100%; min-height: 30px" > {{getDescription()}} </p>
           <div class="infos" *ngIf="promotedMetrics.subscribers > 0">
             <gv-metrics [metrics]="promotedMetrics" >
             </gv-metrics>
