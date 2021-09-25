@@ -33,8 +33,10 @@ $font-prefix: '~@ibm/plex';
   --gv-state-major--bgc:rgba(39, 174, 96, 0.15);
   --gv-state-major--c:#27AE60;
   --gv-tag-major--bgc: #F14D57;
-  --gv-tag-major--bdc:#F14D57;
+  --gv-tag-major--bdc: #F14D57;
   --gv-theme-font-size-s: 15px;
+  --gv-button-primary--bgc: #F14D57;
+  --gv-border-radius-vt: 8px;
 }
 
 /* (1920x1080) Full HD Display */
@@ -299,6 +301,10 @@ body {
   content: '*';
   margin: 0 0.2rem;
 }
+
+
+//modify for vtt
+//@Author: huynq79
 .gv-btn-vt {
   padding: 0px 15px;
   border-radius: 8px;
@@ -318,4 +324,28 @@ body {
 
 .gv-btn-vt:hover {
   transform: scale(1.1);
+}
+
+//for application tab
+app-application-analytics>.page__content, app-application-logs>.page__content, app-application-notifications>.page__content{
+  padding-top: 2px;
+}
+app-application-notifications >.page__content>.page__box {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+app-application-general>.page__content, app-application-metadata>.page__content, app-application-subscriptions>.page__content,app-application-members>.page__content,
+app-gv-contact>.page__content{
+  background-color: white;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin: 2px var(--gv-theme-layout--pr) var(--gv-theme-page--pb) var(--gv-theme-layout--pl);
+  padding: 0px;
+}
+app-application-general>.page__box-title, app-application-general>.page__box-content, app-application-general>.page__box-footer,
+app-application-metadata>.page__box-title, app-application-metadata>.page__box-content, app-application-metadata>.page__box-footer,
+app-application-subscriptions>.page__box-title, app-application-subscriptions>.page__box-content, app-application-subscriptions>.page__box-footer,
+app-application-members>.page__box-title, app-application-members>.page__box-content, app-application-members>.page__box-footer{
+  margin: 0px 4rem;
+  padding: 2rem 0px;
 }

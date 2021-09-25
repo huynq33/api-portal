@@ -62,14 +62,6 @@
             </div>
           </div>
 
-          <gv-file-upload *ngIf="canUpdate"
-                          name="background"
-                          formControlName="background"
-                          ngDefaultControl
-                          accept="image/*"
-                          except=".svg"
-                          limit="500000"
-                          [label]="'application.change_background' | translate"></gv-file-upload>
 
           <gv-identity-picture *ngIf="!canUpdate" [picture]="application.background" [display_name]="'bg-' + displayName">
           </gv-identity-picture>

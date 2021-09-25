@@ -38,12 +38,14 @@
 
 <!--      <gv-nav *ngIf="!forceLogin() || (forceLogin() && !isInLoginOrRegistration())"-->
 <!--              [routes]="mainRoutes" [ngClass]="{'layout__nav': isHomepage}"></gv-nav>-->
-      <nav class="gv-nav-vt">
-        <a routerLink="dashboard" routerLinkActive="active" class="gv-btn-vt" *ngIf="isAuthenticated()">Dashboard</a>
-        <a routerLink="catalog" routerLinkActive="active" class="gv-btn-vt">Catalog</a>
-        <a routerLink="applications" routerLinkActive="active" class="gv-btn-vt" *ngIf="isAuthenticated()">Applications</a>
-        <a routerLink="documentation/root" routerLinkActive="active" class="gv-btn-vt">Documentation</a>
-      </nav>
+      <div class="gv-nav-outer-vt">
+        <nav class="gv-nav-vt">
+          <a routerLink="dashboard" routerLinkActive="active" class="gv-btn-vt" *ngIf="isAuthenticated()">Dashboard</a>
+          <a routerLink="catalog" routerLinkActive="active" class="gv-btn-vt">Catalog</a>
+          <a routerLink="applications" routerLinkActive="active" class="gv-btn-vt" *ngIf="isAuthenticated()">Applications</a>
+          <a routerLink="documentation/root" routerLinkActive="active" class="gv-btn-vt">Documentation</a>
+        </nav>
+      </div>
 
       <div class="layout__nav__container"
            *ngIf="!isInLoginOrRegistration()">

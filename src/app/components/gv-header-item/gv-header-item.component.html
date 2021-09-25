@@ -31,7 +31,7 @@
   </gv-identity-picture>
   <div class="title" style="margin-left: 70px">
     <p style="font-weight: bold;font-size: 20px;margin: 0px">{{getTitle(item)}}</p>
-    <p>Version: {{getVersion(item)}} <gv-state *ngIf="getStates(item)">Running</gv-state></p>
+    <p *ngIf="getVersion(item)">Version: {{getVersion(item)}} <gv-state [success]="true" *ngIf="getStates(item)">Running</gv-state><gv-state [error]="true" *ngIf="!getStates(item)">Stopped</gv-state></p>
   </div>
   <div class="actions" *ngIf="canSubscribe()">
     <button (click)="onSubscribe()" class="gv-btn-vt active">Subscribe</button>

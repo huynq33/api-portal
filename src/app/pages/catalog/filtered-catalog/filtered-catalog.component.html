@@ -48,7 +48,7 @@
               <gv-rating *ngIf="getRating()" [value]="getRating().average" [count]="getRating().count"></gv-rating>
             </div>
           </div>
-          <p class="description" style="display: flex;width: 100%"> {{getDescription()}} </p>
+          <p class="description" style="display: flex;width: 100%; min-height: 30px ; max-height: 100px; overflow: auto" > {{getDescription()}} </p>
           <div class="infos" *ngIf="promotedMetrics.subscribers > 0">
             <gv-metrics [metrics]="promotedMetrics" >
             </gv-metrics>
@@ -62,14 +62,14 @@
       </div>
 <!--       End modify vt-->
 
-      <article class="catalog__article__random" *ngIf="!inCategory() && !inCategoryAll()">
-        <h3 class="title">{{'catalog.othersApi.title' | translate}}
-          <p>{{'catalog.othersApi.subTitle' | translate}}</p></h3>
+<!--      <article class="catalog__article__random" *ngIf="!inCategory() && !inCategoryAll()">-->
+<!--        <h3 class="title">{{'catalog.othersApi.title' | translate}}-->
+<!--          <p>{{'catalog.othersApi.subTitle' | translate}}</p></h3>-->
 
-        <div class="catalog__cards catalog__cards__random">
-          <gv-card *ngFor="let api of randomList" [item]="api" (click)="goToApi(api)"></gv-card>
-        </div>
-      </article>
+<!--        <div class="catalog__cards catalog__cards__random">-->
+<!--          <gv-card *ngFor="let api of randomList" [item]="api" (click)="goToApi(api)"></gv-card>-->
+<!--        </div>-->
+<!--      </article>-->
     </div>
     <img class="gv-pro-bg-vt"/>
 

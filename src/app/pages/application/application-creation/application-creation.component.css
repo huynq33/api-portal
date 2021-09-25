@@ -19,6 +19,9 @@
   --gv-table-header--fz: var(--gv-theme-font-size--m, 14px);
   --gv-table-header--p: 0;
   --gv-button--fz: var(--gv-theme-font-size-l);
+  --gv-stepper-valid--bgc:#F14D57;
+  --gv-stepper-passed--bdc:#F14D57;
+  --gv-plans--bgc:#F14D57;
 }
 
 .page__content {
@@ -246,7 +249,8 @@ gv-input, gv-text, gv-option, gv-select, .form-control-grants, gv-switch {
 }
 
 .message-confirm {
-  background-color: var(--gv-theme-color);
+  border-radius: var(--gv-border-radius-vt);
+  background-color: #F14D57;
   color: var(--gv-theme-font-color-light);
   --gv-icon--c: var(--gv-theme-font-color-light);
 }

@@ -16,21 +16,22 @@
 
 -->
 
-<form class="page__content form" [formGroup]="loginForm" (ngSubmit)="login()" style="display: flex; margin-top: 50px">
-  <div style="margin-left: 25%; width:25%; display:inline-block;">
-    <div class="login_title">
+<form class="d-f page__content form" [formGroup]="loginForm" (ngSubmit)="login()">
+  <div class="login_content">
+  <div class="w-h bg-w p-t-7 b-r login_backgound">
+    <div class="login_title m-l-8">
     </div>
-    <div>
+    <div class="p-r-18 p-l-8">
       <p>{{ 'login.intro' | translate }} </p>
     </div>
     <div class="login_bg">
     </div>
   </div>
 
-  <div style="width:25%; display:inline-block;">
-    <div class="page__box">
-      <div class="page__box-title">
-        <h3 *ngIf="loginForm || providers">{{ 'login.title' | translate }}</h3>
+  <div class="w-h bg-w login_form">
+    <div class="w-f f-l page__box">
+      <div class="page__box-title p-0">
+        <h3 class="m-0" *ngIf="loginForm || providers">{{ 'login.title' | translate }}</h3>
       </div>
 
       <div class="page__box-content" *ngIf="loginEnabled">
@@ -40,9 +41,9 @@
           name="username"
           label="{{ 'login.username' | translate}}"
           formControlName="username"
+          placeholder="{{ 'login.username' | translate}}"
           ngDefaultControl
-          gvControl
-          icon-left="communication:shield-user">
+          gvControl>
           <input/>
         </gv-input>
         <gv-input
@@ -51,9 +52,9 @@
           name="password"
           label="{{ 'login.password' | translate }}"
           formControlName="password"
+          placeholder="{{ 'login.password' | translate}}"
           ngDefaultControl
-          gvControl
-          icon-left="general:shield-protected">
+          gvControl>
           <input/>
         </gv-input>
       </div>
@@ -64,7 +65,6 @@
           class="signin"
           [disabled]="!isFormValid()"
           primary
-          icon="navigation:sign-in"
           type="submit">{{ 'login.button' | translate }}</gv-button>
 
         <gv-button *ngFor="let provider of providers"
@@ -75,16 +75,19 @@
           {{ provider.name }}
         </gv-button>
 
-        <div *ngIf="loginEnabled && registrationEnabled" class="row">
-          <div>{{ 'login.signup.text' | translate }}</div>
+        <div *ngIf="loginEnabled" class="row row-r">
+          <gv-button style="text-decoration: none;" link routerLink="/user/resetPassword">{{ 'login.resetPassword' | translate }}</gv-button>
+        </div>
+
+        <div *ngIf="loginEnabled && registrationEnabled" class="row row-l">
+          <div>{{ 'login.signup.text' | translate }}</div>&nbsp;&nbsp;
           <gv-button link routerLink="/user/registration">{{ 'login.signup.link' | translate }}</gv-button>
         </div>
-        <div *ngIf="loginEnabled" class="row">
-          <gv-button link routerLink="/user/resetPassword">{{ 'login.resetPassword' | translate }}</gv-button>
-        </div>
+        
 
       </div>
 
     </div>
   </div>
+</div>
 </form>

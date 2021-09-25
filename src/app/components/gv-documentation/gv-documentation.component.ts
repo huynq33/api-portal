@@ -37,7 +37,7 @@ import { ScrollService } from '../../services/scroll.service';
   ]
 })
 export class GvDocumentationComponent implements AfterViewInit {
-
+  private static hasTreeClosed: boolean;
   @Input() set pages(pages: Page[]) {
     clearTimeout(this.loadingTimer);
     if (pages && pages.length) {
@@ -75,7 +75,7 @@ export class GvDocumentationComponent implements AfterViewInit {
   ) {
   }
 
-  static PAGE_PADDING_TOP_BOTTOM = 44;
+  static PAGE_PADDING_TOP_BOTTOM = 240;
   static PAGE_COMPONENT = 'app-gv-page';
 
   currentPage: Page;
@@ -95,8 +95,12 @@ export class GvDocumentationComponent implements AfterViewInit {
 
   static updateMenuHeight(menuElement) {
     if (menuElement) {
-      const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-      menuElement.style.height = `${viewportHeight - (ScrollService.getHeaderHeight() + 2 * GvDocumentationComponent.PAGE_PADDING_TOP_BOTTOM)}px`;
+      if (this.hasTreeClosed){
+        menuElement.style.height = `40px`;
+      }else {
+        const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        menuElement.style.height = `${viewportHeight - (ScrollService.getHeaderHeight() + 1.5 * GvDocumentationComponent.PAGE_PADDING_TOP_BOTTOM)}px`;
+      }
     }
   }
 
@@ -191,6 +195,7 @@ export class GvDocumentationComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => {
+      GvDocumentationComponent.hasTreeClosed = false;
       GvDocumentationComponent.reset(this.treeMenu.nativeElement);
     }, 0);
   }
@@ -226,6 +231,8 @@ export class GvDocumentationComponent implements AfterViewInit {
   @HostListener(':gv-tree:toggle', ['$event.detail.closed'])
   onToggleTree(closed) {
     this.hasTreeClosed = closed;
+    GvDocumentationComponent.hasTreeClosed = this.hasTreeClosed;
+    GvDocumentationComponent.updateMenuHeight(this.treeMenu.nativeElement);
   }
 
   isMarkdown(page: Page) {

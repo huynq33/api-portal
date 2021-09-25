@@ -5,7 +5,7 @@ const app = express();
 
 app.use(compression());
 app.use(express.static('dist/'));
-app.use('/portal', createProxyMiddleware({ target: 'http://localhost:8083', changeOrigin: true }));
+app.use('/portal', createProxyMiddleware({ target: 'http://172.104.175.195:8083', changeOrigin: true }));
 
 app.all("/*", function(req, res) {
   res.sendFile('index.html', { root: 'dist/' });
