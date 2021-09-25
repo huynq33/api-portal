@@ -151,7 +151,7 @@
 }
 
 .layout__user-menu {
-  --gv-user-menu--c: var(--gv-theme-neutral-color-lightest);
+  --gv-user-menu--c:black;
   --gv-user-menu-icon--c: var(--gv-theme-neutral-color-lightest);
   --gv-user-menu--tsh: 1px 1px 1px #000;
 }
@@ -258,5 +258,8 @@ gv-nav {
 }
 .gv-nav-vt>a{
   display: inline-flex;
+}
+gv-menu {
+  font-size: 14px;
 }
 

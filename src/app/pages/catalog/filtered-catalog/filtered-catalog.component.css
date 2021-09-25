@@ -149,7 +149,7 @@ gv-row {
 .content {
   color: white;
   margin-left: 30px;
-  width: 30%;
+  width: 40%;
   min-width: 200px;
 }
 .content > button {
@@ -183,7 +183,8 @@ gv-identity-picture {
 
 @media screen and (max-width: 1080px) {
   .gv-pro-bg-vt{
-    width: 40%;
+    width: 50%;
+    top:50px;
     right: 10px;
   }
   .content{
@@ -198,4 +199,33 @@ gv-identity-picture {
   .content{
     width: 100%;
   }
+}
+.titleApi{
+  float: left;
+  margin-left: 20px
+}
+.titleApi > p{
+  font-size: 32px;
+  font-weight: 400;
+  margin: 5px 0px;
+}
+.titleApi>span {
+  margin-bottom: 10px;
+  display: block;
+}
+.description{
+  display: flex;
+  width: 100%;
+  min-height: 30px ;
+  max-height: 100px;
+  overflow: auto;
+  font-size: 14px;
+}
+#gv-promote-header-vt{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+gv-rating{
+  display: block;
 }

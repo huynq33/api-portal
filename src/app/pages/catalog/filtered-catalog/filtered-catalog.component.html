@@ -38,17 +38,17 @@
     <div>
       <div class="container">
         <div class="content">
-          <div >
+          <div id="gv-promote-header-vt">
             <gv-identity-picture [picture]="getPicture()" [display_name]="getPictureDisplayName()" style="display: inline; float: left" >
             </gv-identity-picture>
 
-            <div class="title" style="float: left; margin-left: 20px">
-              <h2>{{getTitle()}}</h2>
-              <span class="version" style="margin-bottom: 10px;display: block;">Version: {{getVersion()}}</span>
+            <div class="titleApi">
+              <p>{{getTitle()}}</p>
+              <span class="version">Version: {{getVersion()}}</span>
               <gv-rating *ngIf="getRating()" [value]="getRating().average" [count]="getRating().count"></gv-rating>
             </div>
           </div>
-          <p class="description" style="display: flex;width: 100%; min-height: 30px ; max-height: 100px; overflow: auto" > {{getDescription()}} </p>
+          <p class="description" > {{getDescription()}} </p>
           <div class="infos" *ngIf="promotedMetrics.subscribers > 0">
             <gv-metrics [metrics]="promotedMetrics" >
             </gv-metrics>
@@ -59,6 +59,7 @@
           </div>
           <button tabindex="0" (click)="goToApi(promotedApi)">View API</button>
         </div>
+        <img class="gv-pro-bg-vt"/>
       </div>
 <!--       End modify vt-->
 
@@ -71,7 +72,6 @@
 <!--        </div>-->
 <!--      </article>-->
     </div>
-    <img class="gv-pro-bg-vt"/>
 
   </section>
 
