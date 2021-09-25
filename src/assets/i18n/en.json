@@ -538,6 +538,7 @@
       "emptyMessage": "Category does not contain any API"
     },
     "category": {
+      "title": "APIs",
       "documentation": {
         "hide": "Hide documentation",
         "show": "Show documentation"

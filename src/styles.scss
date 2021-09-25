@@ -331,14 +331,14 @@ app-application-analytics>.page__content, app-application-logs>.page__content, a
   padding-top: 2px;
 }
 app-application-notifications >.page__content>.page__box {
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 app-application-general>.page__content, app-application-metadata>.page__content, app-application-subscriptions>.page__content,app-application-members>.page__content,
 app-gv-contact>.page__content{
   background-color: white;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
   margin: 2px var(--gv-theme-layout--pr) var(--gv-theme-page--pb) var(--gv-theme-layout--pl);
   padding: 0px;
 }

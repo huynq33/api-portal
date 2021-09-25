@@ -87,7 +87,7 @@
 
   <section class="catalog__section__content">
     <div class="catalog__section__content__title" [id]="fragments.filter">
-      <h2 class="title"></h2>
+      <h2 class="title">{{'catalog.category.title' | translate}}</h2>
       <gv-select
           *ngIf="canFilter"
           [value]="this.currentCategory"
