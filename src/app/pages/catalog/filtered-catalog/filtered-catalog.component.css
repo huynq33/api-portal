@@ -175,3 +175,27 @@ gv-identity-picture {
 .version {
   margin-left: 0;
 }
+:host{
+  --gv-button-primary--bgc: #F14D57;
+  --gv-option--bgc: rgb(203, 198, 198);
+  --gv-theme-neutral-color-dark: #5f5d5d;
+}
+
+@media screen and (max-width: 1080px) {
+  .gv-pro-bg-vt{
+    width: 40%;
+    right: 10px;
+  }
+  .content{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gv-pro-bg-vt{
+    display: none;
+  }
+  .content{
+    width: 100%;
+  }
+}

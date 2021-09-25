@@ -191,8 +191,7 @@ export class GvHeaderItemComponent implements OnInit, OnDestroy {
       if (item.version) {
         return item.version;
       } else if (item.applicationType) {
-        const icon = this.getApplicationTypeIcon(item.applicationType);
-        return html`<gv-icon shape="${icon}"></gv-icon>`;
+        return null;
       }
     }
     return null;

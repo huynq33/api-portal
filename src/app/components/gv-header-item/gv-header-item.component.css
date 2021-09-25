@@ -4,6 +4,7 @@ gv-identity-picture {
   position: absolute;
   --gv-image--of: contain;
   transition: all 150ms ease-in-out 0s;
+  border-radius: 15px;
 }
 
 .header {
@@ -14,6 +15,7 @@ gv-identity-picture {
   display: flex;
   justify-content: space-between;
   padding:10px;
+  min-height: 65px;
 }
 .actions {
   position: relative;
@@ -29,4 +31,12 @@ gv-identity-picture {
 .page__content-back-button-vt {
   margin-left: var(--gv-theme-layout--pr);
   margin-top: 24px;
+}
+:host{
+  --gv-img-icon-vt:15px;
+}
+.title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

@@ -104,7 +104,7 @@
 
 .layout__header__container {
   display: grid;
-  grid-template-columns: 75px 1fr auto;
+  grid-template-columns: 175px 1fr auto;
   grid-gap: 0.5rem;
   padding: var(--gv-theme-layout--pt) var(--gv-theme-layout--pr) var(--gv-theme-layout--pb) var(--gv-theme-layout--pl);
 }
@@ -159,6 +159,8 @@
 .layout__content {
   background-color: #F4F4F4;
   flex-grow: 1;
+  position: relative;
+
 }
 
 .layout__footer {
@@ -246,9 +248,15 @@ gv-nav {
   justify-content: flex-end;
 }
 
-.gv-nav-vt {
+.gv-nav-outer-vt {
   align-items: center;
   display: flex;
   justify-content: flex-end;
+}
+.gv-nav-vt {
+  display: block;
+}
+.gv-nav-vt>a{
+  display: inline-flex;
 }
 

@@ -13,3 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+.page__content {
+  background-color: white;
+  border-radius: 30px;
+  margin: var(--gv-theme-page--pb) var(--gv-theme-layout--pr) var(--gv-theme-page--pb) var(--gv-theme-layout--pl);
+  padding: 15px;
+}
