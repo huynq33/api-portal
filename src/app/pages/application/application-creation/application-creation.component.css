@@ -29,7 +29,6 @@
 }
 
 .application-creation__content {
-  background-color: var(--gv-theme-neutral-color-lightest);
   margin-right: 1rem;
   flex: 1;
   display: flex;
@@ -49,6 +48,10 @@
   height: 490px;
   display: flex;
   flex-direction: column;
+  background: #FAFAFA;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  margin-top: 24px;
 }
 
 .step-content > * {
@@ -153,8 +156,10 @@ app-application-creation-step3 gv-option.has-disabled-plans {
 .actions {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid var(--gv-theme-neutral-color-dark);
   padding: 2rem;
+  background: #FAFAFA;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 
 .application-creation__subscription-form__plans .actions {
@@ -175,10 +180,13 @@ app-application-creation-step3 gv-option.has-disabled-plans {
 }
 
 .application-creation__stepper {
-  display: flex;
-  border-bottom: 1px solid var(--gv-theme-neutral-color-dark);
-  padding: 1.5rem 1rem 1rem 1rem;
-  min-height: 110px;
+  background: #FAFAFA;
+  border: 1px solid #ADADAD;
+  border-radius: 12px;
+  height: 62px;
+  width: 65%;
+  margin: 50px auto;
+  margin-top: 50px;
 }
 
 .application-creation__stepper gv-stepper {
