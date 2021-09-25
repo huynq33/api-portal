@@ -294,3 +294,7 @@ gv-input, gv-text, gv-option, gv-select, .form-control-grants, gv-switch {
   max-width: 600px;
   align-self: center;
 }
+
+.title{
+  position: absolute;
+}
