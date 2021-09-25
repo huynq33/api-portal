@@ -13,3 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ gv-card-list {
+    padding: 24px;
+    background: #FAFAFA;
+    border-radius: 16px;
+ }

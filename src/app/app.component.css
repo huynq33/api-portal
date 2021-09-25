@@ -25,6 +25,7 @@
   position: sticky;
   top: 0;
   z-index: 110;
+  box-shadow: 0px 6px 20px rgba(77, 77, 77, 0.05);
 }
 
 .layout__header gv-message {

@@ -17,6 +17,9 @@
 gv-button {
     -ms-transition: all 200ms ease-in;
     transition: all 200ms ease-in;
+    margin-top: var(--gv-theme-page--pt);
+    margin-right: var(--gv-theme-layout--pr);
+    float: right;
 }
 
 gv-button:hover {

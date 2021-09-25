@@ -19,8 +19,8 @@ $font-prefix: '~@ibm/plex';
   --gv-theme-homepage-background-height2: 100%;
 
   // ********** Page ************
-  --gv-theme-page--pb: 4rem;
-  --gv-theme-page--pt: 4rem;
+  --gv-theme-page--pb: 3rem;
+  --gv-theme-page--pt: 3rem;
 
   // ********** Modify login page huynq79 ************
   --gv-theme-logo-v2: url('/assets/images/gv-logo-v2.png');
@@ -101,7 +101,7 @@ $font-prefix: '~@ibm/plex';
 }
 
 .page__content section {
-  margin: 42px 0;
+  margin: 30px 0;
 }
 
 .page__content-back-button {
@@ -320,5 +320,4 @@ body {
 
 .gv-btn-vt:hover {
   transform: scale(1.1);
-  color: cornflowerblue;
 }
