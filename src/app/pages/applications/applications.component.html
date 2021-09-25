@@ -26,7 +26,7 @@
   </section>
 
   <section *ngIf="!empty">
-    <gv-card-list [items]="applications"></gv-card-list>
+    <gv-card-list class="applications" [items]="applications" [style]="cardListGridTemplate"></gv-card-list>
   </section>
 </div>
 
