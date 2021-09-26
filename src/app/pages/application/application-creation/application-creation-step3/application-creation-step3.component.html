@@ -15,7 +15,8 @@
     limitations under the License.
 
 -->
-<form [formGroup]="planForm" *ngIf="planForm" class="form step application-creation__subscription-form">
+<p class="title">{{'applicationCreation.step.subscription' | translate}} </p>
+<form [formGroup]="planForm" *ngIf="planForm" class="form step application-creation__subscription-form step-content-next">
   <div class="application-creation__subscription-form__title">
   <gv-autocomplete #searchApiAutocomplete
                    class="form-control application-creation__autocomplete"

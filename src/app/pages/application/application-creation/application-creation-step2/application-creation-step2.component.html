@@ -16,13 +16,13 @@
 
 -->
 <div class="form step">
-  <div class="form-control">
+  <p class="title">{{'applicationCreation.step.security' | translate}} </p>
+  <div class="form-control step-content-next">
     <gv-option [options]="allowedTypes"
                autofocus
                [value]="applicationType.id"
                class="application-types"></gv-option>
   </div>
-
   <form [formGroup]="appForm" class="form" *ngIf="isSimpleApp">
     <div class="form-control" formGroupName="app">
       <gv-input name="type"
