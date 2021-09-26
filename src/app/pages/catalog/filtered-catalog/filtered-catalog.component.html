@@ -43,6 +43,7 @@
             </gv-identity-picture>
 
             <div class="titleApi">
+              <fa-icon class="fas fa-address-card" color="#2980B9" size="2em"></fa-icon>
               <p>{{getTitle()}}</p>
               <span class="version">Version: {{getVersion()}}</span>
               <gv-rating *ngIf="getRating()" [value]="getRating().average" [count]="getRating().count"></gv-rating>

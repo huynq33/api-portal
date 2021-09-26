@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<div class="page__content">
+<div class="page__content" [ngClass]="{'isCatalogTab':isCatalog()}">
   <div class="page__box">
     <div class="page__box-title">
       <h3 class="title">{{ 'tickets.title' | translate }}</h3>

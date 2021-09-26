@@ -354,3 +354,13 @@ app-application-members>.page__box-title, app-application-members>.page__box-con
   margin: 0px 4rem;
   padding: 2rem 0px;
 }
+app-user-contact>app-gv-contact>.page__content {
+  background-color: white;
+  border-radius: 30px;
+  margin: var(--gv-theme-page--pb) var(--gv-theme-layout--pr) var(--gv-theme-page--pb) var(--gv-theme-layout--pl);
+  padding: 15px;
+}
+app-user-contact>app-gv-contact>.page__box-title{
+  padding: 2rem 4rem;
+}
+

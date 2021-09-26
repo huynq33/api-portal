@@ -178,8 +178,8 @@ gv-identity-picture {
   margin-left: 0;
 }
 :host{
-  --gv-button-primary--bgc: #F14D57;
-  --gv-option--bgc: rgb(203, 198, 198);
+  --gv-button-primary--bgc: rgba(255, 255, 255, 0.6);
+  --gv-option--bgc: #F4F4F4;
   --gv-theme-neutral-color-dark: #5f5d5d;
 }
 

@@ -52,3 +52,8 @@
   margin: var(--gv-theme-page--pb) var(--gv-theme-layout--pr) var(--gv-theme-page--pb) var(--gv-theme-layout--pl);
   padding: 15px;
 }
+.page__content.isCatalogTab{
+  border-top-left-radius: unset;
+  border-top-right-radius: unset;
+  margin-top:2px;
+}

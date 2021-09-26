@@ -43,6 +43,7 @@ export class TicketsHistoryComponent implements OnInit, OnDestroy {
   api: string;
   selectedTicketIds: string[];
   compareFn: any;
+  isCateTab: boolean;
 
   constructor(private config: ConfigurationService,
               private portalService: PortalService,
@@ -53,6 +54,12 @@ export class TicketsHistoryComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.pageSizes = this.config.get('pagination.size.values');
+    let currentRoute = this.router.url;
+    if (currentRoute.includes("catalog")){
+      this.isCateTab = true;
+    }else{
+      this.isCateTab = false;
+    }
     this.size = this.route.snapshot.queryParams[SearchQueryParam.SIZE] ?
       parseInt(this.route.snapshot.queryParams[SearchQueryParam.SIZE], 10) : this.config.get('pagination.size.default');
 
@@ -183,5 +190,9 @@ export class TicketsHistoryComponent implements OnInit, OnDestroy {
       selectable: true,
       data
     };
+  }
+
+  isCatalog() {
+    return this.isCateTab;
   }
 }
