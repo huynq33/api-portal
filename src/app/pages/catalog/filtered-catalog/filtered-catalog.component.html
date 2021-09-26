@@ -88,7 +88,7 @@
 
   <section class="catalog__section__content">
     <div class="catalog__section__content__title" [id]="fragments.filter">
-      <h2 class="title">{{'catalog.category.title' | translate}}</h2>
+      <h2 class="title" *ngIf="allApis.length > 0">{{'catalog.category.title' | translate}}</h2>
       <gv-select
           *ngIf="canFilter"
           [value]="this.currentCategory"
@@ -96,12 +96,12 @@
           [attr.placeholder]="'catalog.filter' | translate"
           [options]="this.categories">
       </gv-select>
-      <gv-option [options]="options" *ngIf="allApis.length > 0" [value]="this.currentDisplay"></gv-option>
+      <gv-option  [options]="options" *ngIf="allApis.length > 0" [value]="this.currentDisplay"></gv-option>
     </div>
 
     <gv-card-list *ngIf="showCards" [items]="allApis" (:gv-tag:click)="goToSearch($event.detail.tagValue)"></gv-card-list>
 
-    <div *ngIf="!showCards" class="catalog__list catalog__list__all">
+    <div *ngIf="!showCards && allApis.length > 0" class="catalog__list catalog__list__all">
       <gv-row *ngFor="let api of allApis" [item]="api.item" (click)="goToApi(api.item)"></gv-row>
     </div>
     <div class="catalog__section__content__pagination" [id]="fragments.pagination">
