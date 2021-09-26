@@ -16,7 +16,8 @@
 
 -->
 <div class="step">
-  <form [formGroup]="form" *ngIf="form" class="form step-grid-content">
+  <p class="title">{{'applicationCreation.step.general' | translate}} </p>
+  <form [formGroup]="form" *ngIf="form" class="form step-grid-content step-content-next">
     <div class="step-grid-column">
       <div class="form-control">
         <gv-input name="name"

@@ -42,7 +42,7 @@
 }
 
 .step-content {
-  padding: 1rem 2rem;
+  padding: 2rem 2rem;
   min-height: 490px;
   max-height: 490px;
   height: 490px;
@@ -51,7 +51,6 @@
   background: #FAFAFA;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  margin-top: 24px;
 }
 
 .step-content > * {
@@ -184,7 +183,7 @@ app-application-creation-step3 gv-option.has-disabled-plans {
   border: 1px solid #ADADAD;
   border-radius: 12px;
   height: 62px;
-  width: 65%;
+  width: 70%;
   margin: 50px auto;
   margin-top: 50px;
 }
@@ -309,4 +308,14 @@ gv-input, gv-text, gv-option, gv-select, .form-control-grants, gv-switch {
 
 .title{
   position: absolute;
+}
+
+p.title{
+  display: contents;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.step-content-next{
+  margin-top: 20px;
 }

@@ -16,7 +16,8 @@
 
 -->
 <div class="step">
-  <div class="step-grid-content" *ngIf="canValidate && !this.creationError">
+  <p class="title">{{'applicationCreation.step.validate' | translate}} </p>
+  <div class="step-grid-content step-content-next" *ngIf="canValidate && !this.creationError">
     <div class="step-grid-column">
       <div class="validation-summary"
            [ngClass]="{'no-subscription': this.subscribeList.length === 0}">
@@ -71,7 +72,7 @@
     </div>
   </div>
 
-  <div class="message message-full message-pending"
+  <div class="message message-full message-pending step-content-next"
        *ngIf="!canValidate && !creationSuccess && !creationError">
     <gv-icon shape="general:smile"></gv-icon>
     <h2>{{'applicationCreation.validation.pending.title' | translate}} </h2>
@@ -86,7 +87,7 @@
                [innerHTML]="'applicationCreation.validation.confirm' | translate: {name:createdApplication.name}"></gv-button>
   </div>
 
-  <div class="message message-full message-error" *ngIf="creationError">
+  <div class="message message-full message-error step-content-next" *ngIf="creationError">
     <gv-icon shape="general:smile"></gv-icon>
     <h2>{{'applicationCreation.validation.error.title' | translate}} </h2>
     <div [innerHTML]="'applicationCreation.validation.error.description' | translate"></div>
