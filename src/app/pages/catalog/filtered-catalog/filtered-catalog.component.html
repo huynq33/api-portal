@@ -99,7 +99,7 @@
       <gv-option  [options]="options" *ngIf="allApis.length > 0" [value]="this.currentDisplay"></gv-option>
     </div>
 
-    <gv-card-list *ngIf="showCards" [items]="allApis" (:gv-tag:click)="goToSearch($event.detail.tagValue)"></gv-card-list>
+    <gv-card-list *ngIf="showCards && allApis.length > 0" [items]="allApis" (:gv-tag:click)="goToSearch($event.detail.tagValue)"></gv-card-list>
 
     <div *ngIf="!showCards && allApis.length > 0" class="catalog__list catalog__list__all">
       <gv-row *ngFor="let api of allApis" [item]="api.item" (click)="goToApi(api.item)"></gv-row>

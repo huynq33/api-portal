@@ -130,13 +130,16 @@
 
 .api-subscribe__stepper {
   display: flex;
-  border-bottom: 1px solid var(--gv-theme-neutral-color-dark);
-  margin: 2rem 3rem;
+  background: #FAFAFA;
+  border: 1px solid #ADADAD;
+  border-radius: 12px;
+  height: 62px;
+  width: 70%;
+  margin: 50px auto;
 }
 
 .api-subscribe__stepper gv-stepper {
   flex: 1;
-  margin-top: 2rem;
 }
 
 aside {
