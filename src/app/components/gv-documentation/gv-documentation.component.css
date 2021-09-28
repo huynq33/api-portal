@@ -99,13 +99,13 @@ app-gv-page.show {
 /*.page__content section {*/
 /*  margin: 0px;*/
 /*}*/
-gv-tree{
-  background-color: rgba(241, 77, 87, 0.78);
-  border-radius: 10px;
-}
-:host{
-  --gv-tree--c:white;
-}
+/*gv-tree{*/
+/*  background-color: rgba(241, 77, 87, 0.78);*/
+/*  border-radius: 10px;*/
+/*}*/
+/*:host{*/
+/*  --gv-tree--c:white;*/
+/*}*/
 .page__content {
   border-radius: 30px;
 }

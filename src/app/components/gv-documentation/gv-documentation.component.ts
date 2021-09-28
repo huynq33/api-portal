@@ -55,7 +55,7 @@ export class GvDocumentationComponent implements AfterViewInit {
           pageToDisplay = this.getFirstPage(pages);
         }
         if (pageToDisplay) {
-          this.onPageChange(pageToDisplay);
+          this.onPageChange(pageToDisplay, true);
           this.menu = this.initTree(pages, pageToDisplay.id);
           this.expandMenu(this.menu);
         } else {
@@ -104,6 +104,13 @@ export class GvDocumentationComponent implements AfterViewInit {
     }
   }
 
+  static updateMenuRedocHeight(menuElement) {
+    if (menuElement) {
+      const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      menuElement.style.height = `${viewportHeight - (ScrollService.getHeaderHeight() + 1.5 * GvDocumentationComponent.PAGE_PADDING_TOP_BOTTOM)}px`;
+    }
+  }
+
   static updateMenuPosition(menuElement, lastTop) {
     if (menuElement) {
       const scrollTop = document.scrollingElement.scrollTop;
@@ -111,8 +118,10 @@ export class GvDocumentationComponent implements AfterViewInit {
         const { height } = menuElement.getBoundingClientRect();
         const contentHeight = document.querySelector(this.PAGE_COMPONENT).getBoundingClientRect().height;
         if (contentHeight - scrollTop <= height) {
-          menuElement.style.top = `${lastTop}px`;
-          menuElement.style.bottom = `${contentHeight - scrollTop}px`;
+          // menuElement.style.top = `${lastTop}px`;
+          // menuElement.style.bottom = `${contentHeight - scrollTop}px`;
+          menuElement.style.left = `40px`;
+          menuElement.style.bottom = `40px`;
           menuElement.style.position = `absolute`;
           return null;
         } else {
@@ -127,13 +136,48 @@ export class GvDocumentationComponent implements AfterViewInit {
 
   }
 
+  static updateMenuRedocPosition(menuElement, lastTop) {
+    if (menuElement) {
+      const scrollTop = document.scrollingElement.scrollTop;
+      if (document.querySelector(this.PAGE_COMPONENT)) {
+        const { height } = menuElement.getBoundingClientRect();
+        const contentHeight = document.querySelector(this.PAGE_COMPONENT).getBoundingClientRect().height;
+        if (contentHeight - scrollTop <= height) {
+          menuElement.style.top = `${lastTop}px`;
+          menuElement.style.bottom = `${contentHeight - scrollTop}px`;
+          menuElement.style.position = `absolute`;
+          return null;
+        } else {
+          this.resetRedoc(menuElement);
+          return scrollTop + ScrollService.getHeaderHeight();
+        }
+      } else {
+        this.resetRedoc(menuElement);
+        return scrollTop + ScrollService.getHeaderHeight();
+      }
+    }
+
+  }
+
   static reset(menuElement) {
+    if (menuElement) {
+      const top = ScrollService.getHeaderHeight() + GvDocumentationComponent.PAGE_PADDING_TOP_BOTTOM;
+      // menuElement.style.bottom = `${GvDocumentationComponent.PAGE_PADDING_TOP_BOTTOM}px`;
+      // menuElement.style.top = `${top}px`;
+      menuElement.style.bottom = `40px`;
+      menuElement.style.left = `40px`;
+      menuElement.style.position = `fixed`;
+      this.updateMenuHeight(menuElement);
+    }
+  }
+
+  static resetRedoc(menuElement) {
     if (menuElement) {
       const top = ScrollService.getHeaderHeight() + GvDocumentationComponent.PAGE_PADDING_TOP_BOTTOM;
       menuElement.style.bottom = `${GvDocumentationComponent.PAGE_PADDING_TOP_BOTTOM}px`;
       menuElement.style.top = `${top}px`;
       menuElement.style.position = `fixed`;
-      this.updateMenuHeight(menuElement);
+      this.updateMenuRedocHeight(menuElement);
     }
   }
 
@@ -219,10 +263,13 @@ export class GvDocumentationComponent implements AfterViewInit {
   }
 
   @HostListener(':gv-tree:select', ['$event.detail.value'])
-  onPageChange(page) {
+  onPageChange(page, init) {
     this.router.navigate([], { queryParams: { page: page.id } }).then(() => {
       this.lastTop = null;
+      if (init)
+        GvDocumentationComponent.hasTreeClosed = true;
       GvDocumentationComponent.reset(this.treeMenu.nativeElement);
+      // this.onToggleTree(true);
     });
     this.currentPage = page;
     this.currentMenuItem = this.findMenuItem(this.menu, page);
@@ -265,7 +312,7 @@ export class GvDocumentationComponent implements AfterViewInit {
   onInternalLinkClick(pageId: string) {
     if (pageId) {
       const pageToDisplay = this._pages.find((page) => page.id === pageId);
-      this.onPageChange(pageToDisplay);
+      this.onPageChange(pageToDisplay, false);
     }
   }
 
