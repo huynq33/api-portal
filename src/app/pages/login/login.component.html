@@ -81,7 +81,7 @@
 
         <div *ngIf="loginEnabled && registrationEnabled" class="row row-l">
           <div>{{ 'login.signup.text' | translate }}</div>&nbsp;&nbsp;
-          <gv-button link routerLink="/user/registration">{{ 'login.signup.link' | translate }}</gv-button>
+          <gv-button class="text-red" red link routerLink="/user/registration">{{ 'login.signup.link' | translate }}</gv-button>
         </div>
         
 

@@ -849,7 +849,7 @@
     "notification": {
       "error": "Invalid username or password"
     },
-    "password": "Password",
+    "password": "Mật khẩu",
     "resetPassword": "Đặt lại mật khẩu",
     "signup": {
       "link": "Đăng ký ngay!",
@@ -880,8 +880,8 @@
     "backLogin": "Quay lại trang đăng nhập",
     "button": "Đăng ký",
     "email": "Email",
-    "firstname": "First name",
-    "lastname": "Last name",
+    "firstname": "Tên",
+    "lastname": "Họ",
     "success": {
       "message": "An email has been sent to: {email}",
       "title": "Registration confirmed!"
@@ -913,8 +913,8 @@
       "message": "If the account exists an email will be sent.",
       "title": "Password reset confirmed!"
     },
-    "title": "Reset your password",
-    "username": "Username"
+    "title": "Đặt lại mật khẩu",
+    "username": "Tên đăng nhập"
   },
   "resetPasswordConfirmation": {
     "backHome": "Back to portal",
