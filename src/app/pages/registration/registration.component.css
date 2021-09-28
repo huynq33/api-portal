@@ -151,6 +151,7 @@ form p{
 }
 form .page__box-title{
   border: none;
+  padding: 0;
   padding-bottom: 10%;
 }
 form .page__box-content{
@@ -196,12 +197,13 @@ form .page__box-footer{
 .box-input input{
   background-color: #F5F5F5;
   padding-left: 15px;
+  box-shadow: none!important;
 
 }
 input:focus{
   border: 1px solid #F14D57;
   box-sizing: border-box;
-  box-shadow: 0px 0px 0px 2px #FFE0E0;
+  box-shadow: 0px 0px 0px 2px #FFE0E0!important;
   border-radius: 8px;
 }
 label{
