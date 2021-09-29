@@ -50,7 +50,7 @@
             </div>
           </div>
           <p class="description" > {{getDescription()}} </p>
-          <div class="infos" *ngIf="promotedMetrics.subscribers > 0">
+          <div class="infos" *ngIf="promotedMetrics && promotedMetrics.subscribers > 0">
             <gv-metrics [metrics]="promotedMetrics" >
             </gv-metrics>
           </div>

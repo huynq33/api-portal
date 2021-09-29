@@ -350,15 +350,19 @@ export class FilteredCatalogComponent implements OnInit {
   }
 
   getTitle() {
-    return this.promotedApiClone.name;
+    if (this.promotedApiClone)
+        return this.promotedApiClone.name;
+    return null;
   }
 
   getVersion() {
-    return this.promotedApiClone.version;
+    if (this.promotedApiClone)
+      return this.promotedApiClone.version;
   }
 
   getDescription() {
-    return this.promotedApiClone.description;
+    if(this.promotedApiClone)
+      return this.promotedApiClone.description;
   }
 
   getPictureDisplayName() {
