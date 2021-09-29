@@ -181,6 +181,7 @@ gv-identity-picture {
   --gv-button-primary--bgc: rgba(255, 255, 255, 0.6);
   --gv-option--bgc: #F4F4F4;
   --gv-theme-neutral-color-dark: #5f5d5d;
+  --gv-button-primary--c: red;
 }
 
 @media screen and (max-width: 1080px) {

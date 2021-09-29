@@ -34,6 +34,6 @@
     <p *ngIf="getVersion(item)">Version: {{getVersion(item)}} <gv-state [success]="true" *ngIf="getStates(item)">Running</gv-state><gv-state [error]="true" *ngIf="!getStates(item)">Stopped</gv-state></p>
   </div>
   <div class="actions" *ngIf="canSubscribe()">
-    <button (click)="onSubscribe()" class="gv-btn-vt active">Subscribe</button>
+    <button (click)="onSubscribe()" class="gv-btn-vt active">{{'gv-header.subscribe'|translate}}</button>
   </div>
 </div>

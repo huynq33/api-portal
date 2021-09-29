@@ -58,7 +58,7 @@
           <div class="labels" >
             <gv-tag *ngFor="let label of getLabels()" major="" clickable="" (:gv-tag:click)="goToSearch(label)">{{label}}</gv-tag>
           </div>
-          <button tabindex="0" (click)="goToApi(promotedApi)">View API</button>
+          <button tabindex="0" (click)="goToApi(promotedApi)">{{'gv-promote.view'|translate}}</button>
         </div>
         <img class="gv-pro-bg-vt"/>
       </div>

@@ -203,12 +203,12 @@ export class GvHeaderItemComponent implements OnInit, OnDestroy {
     const queryParamMap = this.route.snapshot.queryParamMap;
     const routerUrl = this.router.url;
     if (queryParamMap.has(SearchQueryParam.QUERY)) {
-      label = 'Back to search';
+      label = 'Quay lại tìm kiếm';
       url = '/catalog/search';
       queryParams = this.route.snapshot.queryParams;
     } else if (routerUrl.includes('applications')) {
       try {
-        label = 'Back to Applications';
+        label = 'Quay lại danh sách ứng dụng';
         url = `/applications`;
       } catch (err) {
         if (err && err.interceptorFuture) {
@@ -219,7 +219,7 @@ export class GvHeaderItemComponent implements OnInit, OnDestroy {
       if (queryParamMap.has(SearchQueryParam.CATEGORY)) {
         const categoryId = queryParamMap.get(SearchQueryParam.CATEGORY);
         try {
-          label = `Back to category: ${categoryId}`;
+          label = `Quay lại mục: ${categoryId}`;
           url = `/catalog/categories/${categoryId}`;
         } catch (err) {
           if (err && err.interceptorFuture) {
@@ -229,12 +229,12 @@ export class GvHeaderItemComponent implements OnInit, OnDestroy {
       } else if (queryParamMap.has(SearchQueryParam.API_QUERY)) {
         const apiQuery = queryParamMap.get(SearchQueryParam.API_QUERY) as FilterApiQuery;
         if (Object.values(FilterApiQuery).includes(apiQuery)) {
-          label = `Back to all Api`;
+          label = `Quay lại tất cả API`;
           url = `/catalog/all`;
         }
 
       } else {
-        label = `Back to all Api`;
+        label = `Quay lại tất cả API`;
         url = `/catalog/all`;
       }
     }

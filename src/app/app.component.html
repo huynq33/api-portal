@@ -40,10 +40,10 @@
 <!--              [routes]="mainRoutes" [ngClass]="{'layout__nav': isHomepage}"></gv-nav>-->
       <div class="gv-nav-outer-vt">
         <nav class="gv-nav-vt">
-          <a routerLink="dashboard" routerLinkActive="active" class="gv-btn-vt" *ngIf="isAuthenticated()">Dashboard</a>
-          <a routerLink="catalog" routerLinkActive="active" class="gv-btn-vt">Catalog</a>
-          <a routerLink="applications" routerLinkActive="active" class="gv-btn-vt" *ngIf="isAuthenticated()">Applications</a>
-          <a routerLink="documentation/root" routerLinkActive="active" class="gv-btn-vt">Documentation</a>
+          <a routerLink="dashboard" routerLinkActive="active" class="gv-btn-vt" *ngIf="isAuthenticated()">{{'route.dashboard' | translate}}</a>
+          <a routerLink="catalog" routerLinkActive="active" class="gv-btn-vt">{{'route.catalog' | translate}}</a>
+          <a routerLink="applications" routerLinkActive="active" class="gv-btn-vt" *ngIf="isAuthenticated()">{{'route.applications' | translate}}</a>
+          <a routerLink="documentation/root" routerLinkActive="active" class="gv-btn-vt">{{'route.catalogApiDocumentation' | translate}}</a>
         </nav>
       </div>
 

@@ -10,38 +10,38 @@
     }
   },
   "api": {
-    "createdAt": "Created at",
-    "deployedAt": "Deployed at",
-    "description": "Description",
-    "endpoint": "Context path",
+    "createdAt": "Tạo lúc",
+    "deployedAt": "Triển khai lúc",
+    "description": "Mô tả",
+    "endpoint": "Endpoint",
     "information": {
       "about": "About",
-      "beFirstToRate": "Be the first to rate",
-      "categories": "Categories",
-      "entrypoints": "Access URL",
-      "labels": "Labels",
+      "beFirstToRate": "Là người đầu tiên đánh giá",
+      "categories": "Các hạng mục",
+      "entrypoints": "URL truy cập",
+      "labels": "Nhãn",
       "metrics": "Metrics",
-      "ratings": "Ratings",
+      "ratings": "Đánh giá",
       "resources": "Resources"
     },
     "list": {
-      "connectedApps": "Connected applications"
+      "connectedApps": "Các ứng dụng đăng kí"
     },
-    "name": "Name",
-    "owner": "Owner",
+    "name": "Tên",
+    "owner": "SỞ hữu",
     "publishedAt": "Published at",
     "version": "Version"
   },
   "apiGeneral": {
-    "backToApplication": "Back to the application \"{name}\"",
-    "backToCatalog": "Back to catalog",
-    "backToCategory": "Back to category \"{name}\"",
-    "backToSearch": "Back to search results",
-    "description": "Description",
-    "giveRating": "Share your review",
-    "rate": "Rate",
-    "rateComment": "Explain to us why",
-    "rateTitle": "Would you recommend this API ?",
+    "backToApplication": "Quay lại ứng dụng \"{name}\"",
+    "backToCatalog": "Quay lại danh mục",
+    "backToCategory": "Quay lại mục \"{name}\"",
+    "backToSearch": "Quay lại kết quả tìm kiếm",
+    "description": "Mô tả",
+    "giveRating": "Chia sẻ suy nghĩ của bạn",
+    "rate": "Đánh giá",
+    "rateComment": "Giải thíc với chúng tôi tại sao",
+    "rateTitle": "Bạn có muốn đánh giá API này ?",
     "rateTitlePlaceholder": "In a word",
     "ratingAnswerCreated": "Your answer has been sent",
     "ratingAnswerDeleted": "Your answer has been deleted",
@@ -60,7 +60,7 @@
   },
   "apiSubscribe": {
     "apps": {
-      "chooseApp": "Choose an application",
+      "chooseApp": "Lựa chọn ứng dụng",
       "comment": "Leave a comment to the API owner",
       "connectedApps": "You already have <b>{count}</b> {count, plural, =0{} one{connected application} other{connected applications}} with the API <b>{apiName}</b>.",
       "createApp": "I want to create an application",
@@ -69,10 +69,10 @@
       "noAvailableApplications": "There are no apps available."
     },
     "chooseApp": {
-      "title": "Choice of application"
+      "title": "Lựa chọn ứng dụng"
     },
     "choosePlan": {
-      "title": "Choice of plan"
+      "title": "Lựa chọn gói"
     },
     "connectedApps": "{count, plural, =0{} one{Connected application} other{Connected applications}} to {planName}",
     "errors": {
@@ -167,16 +167,16 @@
       "ok": "OK"
     },
     "description": {
-      "label": "Describe the goal of this application",
-      "title": "Description"
+      "label": "Mô tả mục đích ứng dụng",
+      "title": "Mô tả"
     },
-    "general": "General",
+    "general": "Tổng quát",
     "information": {
-      "createdDate": "Created",
-      "lastUpdate": "Updated",
-      "owner": "Owner",
-      "title": "Information",
-      "type": "Type"
+      "createdDate": "Tạo",
+      "lastUpdate": "Thay đổi",
+      "owner": "Sở hữu",
+      "title": "Thông tin",
+      "type": "Loại"
     },
     "list": {
       "connectedApis": "Subscribed APIs"
@@ -281,8 +281,8 @@
       "value": "Value"
     },
     "name": {
-      "label": "Name of the app",
-      "title": "Name of the application"
+      "label": "Tên của ứng dụng",
+      "title": "Tên ứng dụng"
     },
     "notifications": {
       "NEW_SUPPORT_TICKET": {
@@ -401,7 +401,7 @@
     "exit": "Exit",
     "general": {
       "description": {
-        "label": "Description",
+        "label": "Mô tả",
         "placeholder": "Just describe its purpose"
       },
       "image": "Application Image",
@@ -544,17 +544,17 @@
         "show": "Show documentation"
       }
     },
-    "defaultCategory": "All the APIs",
+    "defaultCategory": "Tất cả API",
     "display": {
-      "cards": "Display cards",
-      "list": "Display list"
+      "cards": "Hiển thị theo thẻ",
+      "list": "Hiển thị theo danh sách"
     },
-    "filter": "Filter the results",
+    "filter": "Lọc tìm kiếm theo",
     "othersApi": {
       "subTitle": "Discover the different APIs in the headlines this month",
-      "title": "The others APIs"
+      "title": "Các APIs khác"
     },
-    "search": "Search API"
+    "search": "Tìm kiếm API"
   },
   "categories": {
     "empty": "There are no categories",
@@ -609,10 +609,10 @@
   },
   "dashboard": {
     "applications": {
-      "create": "Create an application",
-      "createFirst": "Create my first application",
-      "list": "See your applications",
-      "title": "Your applications"
+      "create": "Tạo 1 ứng dụng",
+      "createFirst": "Tạo ứng dụng đầu tiên",
+      "list": "Xem danh sách ứng dụng của bạn",
+      "title": "Danh sách ứng dụng của bạn"
     },
     "empty": "You don't have an application yet",
     "stats": {
@@ -627,15 +627,15 @@
     },
     "subscriptions": {
       "api": "API",
-      "application": "Application",
+      "application": "Ứng dụng",
       "list": {
         "empty": "No subscription"
       },
-      "plan": "Plan",
+      "plan": "Gói",
       "subtitle": "Select a subscription to see the activity for the past week",
-      "title": "Your subscriptions"
+      "title": "Danh sách đăng ký"
     },
-    "welcome": "Welcome {username},"
+    "welcome": "Xin chào {username},"
   },
   "errors": {
     "clientRegistrationProvider": {
@@ -753,7 +753,7 @@
   },
   "gv-input": {
     "copy": "Copy to clipboard",
-    "search": "Search"
+    "search": "Tìm kiếm"
   },
   "gv-list": {
     "error": "An error occurred while loading list",
@@ -800,17 +800,17 @@
   "gv-promote": {
     "empty": "No API to display here",
     "error": "An error occurred while loading the API",
-    "view": "View API"
+    "view": "Xem API"
   },
   "gv-rating-list": {
-    "answerLabel": "Add an answer",
-    "cancel": "Cancel",
+    "answerLabel": "Thêm câu trả lời",
+    "cancel": "Dừng",
     "confirmAnswerDelete": "Are you sure you delete the answer ?",
     "confirmRatingDelete": "Are you sure you delete the rating ?",
     "deleteAnswer": "Delete answer",
     "deleteRating": "Delete rating",
-    "reply": "Reply",
-    "send": "Send"
+    "reply": "Trả lời",
+    "send": "Gửi"
   },
   "gv-rating": {
     "description-1": "I hate",
@@ -919,9 +919,9 @@
     "username": "Tên đăng nhập"
   },
   "resetPasswordConfirmation": {
-    "backHome": "Back to portal",
-    "backLogin": "Back to Sign in",
-    "backResetPassword": "Back to password reset",
+    "backHome": "Quay lại portal",
+    "backLogin": "Quay lại đăng nhập",
+    "backResetPassword": "Quay lại reset password",
     "button": "Confirm",
     "confirmedPassword": "Confirm your password",
     "email": "Email",
@@ -936,37 +936,37 @@
     "tokenExpired": "Your password reset request has expired"
   },
   "route": {
-    "analyticsApplication": "Analytics",
-    "applicationCreation": "Create an application",
-    "applications": "Applications",
-    "catalog": "Catalog",
-    "catalogAll": "All APIs",
+    "analyticsApplication": "Phân tích",
+    "applicationCreation": "Tạo 1 ứng dụng",
+    "applications": "Danh sách ứng dụng",
+    "catalog": "Danh mục",
+    "catalogAll": "Tất cả API",
     "catalogApi": "Try it out",
-    "catalogApiContact": "Contact",
-    "catalogApiDocumentation": "Documentation",
-    "catalogApiSubscribe": "Subscription",
-    "catalogCategories": "Categories",
-    "catalogCategory": "Category",
-    "catalogFeatured": "Featured",
-    "catalogStarred": "Starred",
-    "catalogTrending": "Trending",
-    "contact": "Contact",
-    "cookies": "Cookies settings",
-    "dashboard": "Dashboard",
-    "homepage": "Home page",
+    "catalogApiContact": "Liên hệ",
+    "catalogApiDocumentation": "Tài liệu",
+    "catalogApiSubscribe": "Đăng ký",
+    "catalogCategories": "Các danh mục",
+    "catalogCategory": "Phân mục",
+    "catalogFeatured": "Tiềm năng",
+    "catalogStarred": "Đánh sao",
+    "catalogTrending": "Xu hướng",
+    "contact": "Liên hệ",
+    "cookies": "Cài đặt Cookies",
+    "dashboard": "Bảng điều khiển",
+    "homepage": "Trang chủ",
     "login": "Đăng nhập",
-    "logout": "Sign out",
+    "logout": "Dăng xuất",
     "logsApplication": "Logs",
     "management": "Administration",
-    "members": "Members",
-    "metadata": "Metadata",
-    "myApplications": "My applications",
-    "mySubscriptions": "My subscriptions",
+    "members": "Thành viên",
+    "metadata": "Siêu dữ liệu",
+    "myApplications": "Danh sách ứng dụng",
+    "mySubscriptions": "Danh sách đăng ký",
     "notFound": "Page not found",
-    "notifications": "Notifications",
-    "subscriptions": "Subscriptions",
-    "tickets": "Tickets",
-    "user": "My account"
+    "notifications": "Thông báo",
+    "subscriptions": "Đăng ký",
+    "tickets": "Vé",
+    "user": "Tài khoản"
   },
   "search": {
     "results": {
@@ -974,48 +974,48 @@
     }
   },
   "site": {
-    "title": "API portal of Gravitee.io"
+    "title": "Cổng API của Viettel"
   },
   "subscriptions": {
     "applications": {
-      "init": "You do not have any application",
-      "name": "Name",
-      "navigate": "Go to the application",
-      "owner": "Owner",
-      "title": "Applications"
+      "init": "Bạn không có ứng dụng nào",
+      "name": "Tên",
+      "navigate": "Đi tới ứng dụng",
+      "owner": "Sở hữu",
+      "title": "Danh sách ứng dụng"
     },
     "subscriptions": {
       "api": "API",
-      "empty": "No subscriptions for this application",
-      "end_date": "End date",
+      "empty": "Không có đăng ký nào cho ứng dụng",
+      "end_date": "Ngày kết thúc",
       "init": "Roll on an application to view its subscriptions",
-      "navigate": "Go to the subscription",
-      "plan": "Plan",
-      "start_date": "Start date",
-      "title": "Subscriptions"
+      "navigate": "Đi tới mục đăng ký",
+      "plan": "Gói",
+      "start_date": "Ngày bắt đầu",
+      "title": "Danh sách đăng ký"
     },
-    "title": "My subscriptions"
+    "title": "Danh sách đăng ký"
   },
   "tickets": {
     "api": "API",
-    "application": "Application",
-    "content": "Content",
-    "date": "Date",
-    "subject": "Subject",
-    "title": "Tickets"
+    "application": "Ứng dụng",
+    "content": "Nội dung",
+    "date": "Ngày",
+    "subject": "Tiêu đề",
+    "title": "Vé"
   },
   "user": {
     "account": {
-      "success": "Your account has been successfully updated",
-      "title": "Personal informations"
+      "success": "Tài khoản đã được update thành công",
+      "title": "Thông tin cá nhân"
     },
-    "change_picture": "Change photo",
-    "display_name": "Name:",
+    "change_picture": "Thay đổi ảnh đại diện",
+    "display_name": "Tên:",
     "email": "Email:",
     "notifications": {
-      "empty": "No notification received",
-      "read": "Read",
-      "title": "Notifications"
+      "empty": "Chưa nhận được thông báo",
+      "read": "Xem",
+      "title": "Thông báo"
     }
   }
 }
